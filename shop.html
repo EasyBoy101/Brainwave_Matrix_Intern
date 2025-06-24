@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/3522288.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/shop_style.css">
+    <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+    <title>Coza Store | Shop</title>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="arc medium-1"></div>
+    </div>
+    <div id="content">
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+            <div class="overlay-content">
+              <form action="">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+          
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+            
+                <a href="#" id="logo" class="navbar-brand order-lg-0 d-flex align-items-center justify-content-between">
+                    <span>COZA</span> STORE
+                </a>
+    
+                <!-- navbar icons -->
+                <div class="order-lg-2 nav-btns">
+                    <button type="button" class="btn position-relative">
+                        <a href="#"><i class="fa fa-search" onclick="openSearch()" ></i></a>
+                    </button>
+                    <button type="button" class="btn position-relative">
+                        <a href="#"> <i class="fa fa-shopping-cart" id="cart-icon"></i>
+                        </a>               
+                        <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge ">0</span>
+                    </button>
+                    <button type="button" class="btn position-relative">
+                        <a href="#">
+                            <div class="night-mode">
+                                <img src="./images/4489231.png" id="icon" style=" width: 20px; height: 20px;">
+                            </div>
+                        </a>
+                    </button>
+                </div>
+    
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="#navMenu" aria-expanded="false" >
+                    <span><i class="fas fa-bars"></i></span>
+                </button>
+                <div id="navMenu" class="collapse navbar-collapse order-lg-1">
+                    <ul id="navLinks" class="navbar-nav mx-auto  ">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link ">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shop.html" class="nav-link">Shop</a>
+                        </li>
+                        <li class="nav-item position-relative">
+                            <a href="features.html" class="nav-link">Features</a>
+                            <span class="position-absolute top-0 start-100 translate-middle badge "><a href="">HOT</a></span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cart">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <div class="cart-content">
+                        <div id="info" >Your Cart Is Currently Empty</div>                  
+                    </div>
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <button type="button" class="btn-buy">Buy Now</button>
+                    <i class="fa fa-times" id="close-cart"></i>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="link ">
+            <div class="container">
+                <h6 class="text-capitalize  py-3"><a href="index.html" class="text-capitalize text-decoration-none ">home</a> / shopping cart </h6>
+            </div>
+        </div>
+    
+        <section class="py-5">
+            <div class="container">
+                <div class="row ">
+                    <div class="section-filter col-lg-3 col-md-3">
+                        <div class="shop-sidebar">
+                            <div class="sidebar-categories">
+                                <div class="section-title">
+                                    <h3>Categories</h3>
+                                </div>
+                                <div class="categories-accordion">
+                                    <div class="accordion" id="accord">
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="cat-one">
+                                                <button class="accordion-button text-start" type="button" data-bs-toggle="collapse" data-bs-target="#cat1" aria-expanded="true" aria-controls="cat1">
+                                                    Women
+                                                </button>
+                                            </h3>
+                                            <div id="cat1" class="accordion-collapse collapse show" aria-labelledby="cat-one" data-bs-parent="#accord">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li><a href="#" data-filter="wCoat">Coats</a></li>
+                                                        <li><a href="#" data-filter="wJacket">Jackets</a></li>
+                                                        <li><a href="#" data-filter="wShoe">Shoes</a></li>
+                                                        <li><a href="#" data-filter="wShirt">Shirts</a></li>
+                                                        <li><a href="#" data-filter="wGown">Gowns<a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="cat-two">
+                                                <button class="accordion-button text-start" type="button" data-bs-toggle="collapse" data-bs-target="#cat2" aria-expanded="true" aria-controls="cat2">
+                                                    Men
+                                                </button>
+                                            </h3>
+                                            <div id="cat2" class="accordion-collapse collapse " aria-labelledby="cat-two" data-bs-parent="#accord">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li><a href="#" data-filter="mCoat">Coats</a></li>
+                                                        <li><a href="#" data-filter="mJacket">Jackets</a></li>
+                                                        <li><a href="#" data-filter="mShoe">Shoes</a></li>
+                                                        <li><a href="#" data-filter="mSuit">Suits</a></li>
+                                                        <li><a href="#" data-filter="mShirt">T shits<a></li>                                                
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="cat-three">
+                                                <button class="accordion-button text-start" type="button" data-bs-toggle="collapse" data-bs-target="#cat3" aria-expanded="true" aria-controls="cat3">
+                                                    Kids
+                                                </button>
+                                            </h3>
+                                            <div id="cat3" class="accordion-collapse collapse " aria-labelledby="cat-three" data-bs-parent="#accord">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li><a href="#">Coats</a></li>
+                                                        <li><a href="#">Jackets</a></li>
+                                                        <li><a href="#">Shoes</a></li>
+                                                        <li><a href="#">Shirts</a></li>
+                                                        <li><a href="#">Jeans</a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="cat-four">
+                                                <button class="accordion-button text-start" type="button" data-bs-toggle="collapse" data-bs-target="#cat4" aria-expanded="true" aria-controls="cat4">
+                                                    Accessories
+                                                </button>
+                                            </h3>
+                                            <div id="cat4" class="accordion-collapse collapse " aria-labelledby="cat-four" data-bs-parent="#accord">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li><a href="#" data-filter="perfume">Perfumes</a></li>
+                                                        <li><a href="#" data-filter="jewelery">Jewelries</a></li>
+                                                        <li><a href="#" data-filter="wristwatches">Wrist Watches</a></li>
+                                                        <li><a href="#" data-filter="bag">Bags</a></li>
+    
+                                                        
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="sidebar-sizes py-4 ">
+                                <div class="section-title">
+                                    <h3>Shop By Sizes</h3>
+                                </div>
+                                <div class="size-list">
+                                    <label for="xxs">
+                                        <input type="checkbox" id="xxs">
+                                        xxs
+                                    </label>
+                                    <label for="xs">
+                                        <input type="checkbox" id="xxs">
+                                        xs
+                                    </label>
+                                    <label for="s">
+                                        <input type="checkbox" id="xxs">
+                                        s
+                                    </label>
+                                    <label for="m">
+                                        <input type="checkbox" id="xxs">
+                                        m
+                                    </label>
+                                    <label for="ml">
+                                        <input type="checkbox" id="xxs">
+                                        ml
+                                    </label>
+                                    <label for="l">
+                                        <input type="checkbox" id="xxs">
+                                        l
+                                    </label>
+                                    <label for="xl">
+                                        <input type="checkbox" id="xxs">
+                                        xl
+                                    </label>
+                                </div>
+    
+                            </div>
+                            <div class="sidebar-color py-4">
+                                <div class="section-title ">
+                                    <h3>Colors</h3>
+                                </div>
+                                <div class="color-list">
+                                   <div class="row">
+                                    <div class="col">
+                                        <label for="black">
+                                            <span class="black"></span>
+                                            <div class="color-text">Black
+                                            </div>
+                                        </label>
+                                        <label for="blue">
+                                            <span class="blue"></span>
+                                            <div class="color-text">Blue
+                                            </div>
+                                        </label>
+                                        <label for="red">
+                                            <span class="red"></span>
+                                            <div class="color-text">Red
+                                            </div>
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="col">
+                                        <label for="violet">
+                                            <span class="violet"></span>
+                                            <div class="color-text">Violet
+                                            </div>
+                                        </label>
+                                        <label for="yellow">
+                                            <span class="yellow"></span>
+                                            <div class="color-text">Yellow
+                                            </div>
+                                        </label>
+                                        <label for="green">
+                                            <span class="green"></span>
+                                            <div class="color-text">Green
+                                            </div>
+                                        </label>
+                                    </div>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-tags">
+                                <div class="section-title ">
+                                    <h3>Tags</h3>
+                                </div>
+                                <div class="tag-btns">
+                                    <button class="filter2 btn m-2 active-filter-btn" type="button" data-filter="all" >All Fashion</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="shoes" >Shoes</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="shirts" >Shirts</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="perfumes" >Perfumes</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="dresses" >Dresses</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="coats" >Coats</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="jewelries" >Jewelries</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="wristwatches" >Wrist Watches</button>
+                                    <button class="filter2 btn m-2" type="button" data-filter="tops" >Tops</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product col-lg-9 col-md-9 ">
+                        <div class="product-items row m-auto">
+                            <div class="item col-lg-4 col-md-6 shirts">
+                                <div class="categories-image">
+                                    <img src="images/wSleeves2.png" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Ash Sleeves</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"> <b class="price">$14.86</b></div>
+    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-1">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 coats" >
+                                <div class="categories-image">
+                                    <img src="images/suit.webp" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Brown Suit</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"> <b class="price">$20.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-2">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 coats" >
+                                <div class="categories-image">
+                                    <img src="images/jacket4.jpg" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Blue Cardigan</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"> <b class="price">$25.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-3">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shoes" >
+                                <div class="categories-image">
+                                    <img src="images/shoe3.jpg" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Unisex Sneakers</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"> <b class="price">$148.6</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-4">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 wristwatches">
+                                <div class="categories-image">
+                                    <img src="images/watch3.png" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Zemo WristWatch</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><s class="text-muted px-1">$24.55</s><b class="price">$15.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-5">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 dresses">
+                                <div class="categories-image">
+                                    <img src="images/wGown4.webp" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Floral Gown</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$65.03</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-6">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shirts">
+                                <div class="categories-image">
+                                    <img src="images/sleeves2.webp" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Short Stripes</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$34.05</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-7">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 tops">
+                                <div class="categories-image">
+                                    <img src="images/wTop3.png" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Sleaky Top</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$18.20</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-8">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 coats">
+                                <div class="categories-image">
+                                    <img src="images/coat1.jpeg" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Brown Leather Coat</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><s class="text-muted px-1">$94.55</s><b class="price">$75.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-9">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 perfumes">
+                                <div class="categories-image">
+                                    <img src="images/6.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Terra Rossa</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$75.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-10">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 tops">
+                                <div class="categories-image">
+                                    <img src="images/wTop6.png" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Black Fit Top</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$21.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-11">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shoes">
+                                <div class="categories-image">
+                                    <img src="images/shoe6.webp" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Jumpers Slide</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$240.85</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-12">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 coats">
+                                <div class="categories-image">
+                                    <img src="images/jacket1.jpg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Jean Jacket</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$140.85</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-13">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 dresses">
+                                <div class="categories-image">
+                                    <img src="images/wGown3.jpg" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Puffer Gown</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><s class="text-muted px-1">$188.24</s><b class="price">$149.05</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-14">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shirts">
+                                <div class="categories-image">
+                                    <img src="images/sleeves.jpg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Sleeves Stripes</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$42.19</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-15">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 jewelries">
+                                <div class="categories-image">
+                                    <img src="images/necklace-with-winged-heart-g9d521b37d_1920.jpg" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Winged Heart</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><s class="text-muted px-1">$484.24</s><b class="price">$330.65</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-16">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 wristwatches">
+                                <div class="categories-image">
+                                    <img src="images/watch4.webp" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Leather Watch</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$30.01</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-17">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shirts">
+                                <div class="categories-image">
+                                    <img src="images/wSleeves4.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Vacation Sleeves</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$24.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-18">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 coats">
+                                <div class="categories-image">
+                                    <img src="images/suit2.webp" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Collar Suit</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$556.60</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-19">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 coats">
+                                <div class="categories-image">
+                                    <img src="images/wCoats1.png" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Coat Parka</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><b class="price">$99.99</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-20">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 perfumes">
+                                <div class="categories-image">
+                                    <img src="images/11.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Gucci Flora</div>
+                                    <div class="contain-price-text ">
+                                        <div class="price-text"><s class="text-muted px-1">$89.00</s><b class="price">$75.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-21">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shoes">
+                                <div class="categories-image">
+                                    <img src="images/wshoe1.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">High Heels</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$544.84</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-22">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 tops">
+                                <div class="categories-image">
+                                    <img src="images/tshirt2.jpg" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Zebra Stripes</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$40.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-23">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 jewelries">
+                                <div class="categories-image">
+                                    <img src="images/pendant-g4d7df44c0_1920.jpg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Glowing Pendant</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$640.39</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-24">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 dresses">
+                                <div class="categories-image">
+                                    <img src="images/wGown7.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Wedding Gown</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$1819</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-25">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 coats">
+                                <div class="categories-image">
+                                    <img src="images/wCoats5.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Skin Coat</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$56.14</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-26">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shoes">
+                                <div class="categories-image">
+                                    <img src="images/shoe4.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">White Jordan</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$796.39</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-27">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 tops">
+                                <div class="categories-image">
+                                    <img src="images/tshirt4.webp" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Black Top</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><s class="text-muted px-1">$49.55</s><b class="price">$25.30</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-28">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 perfumes">
+                                <div class="categories-image">
+                                    <img src="images/9.jpeg" class="product-image img-fluid">
+                                    <span>new</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Jeamme Lanvin</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$40.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-29">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-lg-4 col-md-6 shirts">
+                                <div class="categories-image">
+                                    <img src="images/wSleeves5.jpeg" class="product-image img-fluid">
+                                    <span>sale</span>
+                                </div>
+                                <div class="all-text">
+                                    <div class="header-text">Creamy Sleeves</div>
+                                    <div class="contain-price-text">
+                                        <div class="price-text"><b class="price">$89.00</b></div>
+                    
+                                        <div class="position-relative mx-2"><a href="" class="popup-btn btn" data-name="p-30">Quick View</a></div> 
+                                    </div>
+                                </div>
+                            </div>    
+                            <div id="load-more">
+                                <div id="loadBtn" class="btn">Load More</div>
+                            </div>
+                        </div>
+                        <div class="popup-view">
+                            <div class="popup-card " data-target="p-1">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wSleeves2.png" alt="" class=" product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Ash Sleeves </h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$14.86</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-2">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/suit.webp" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Brown Suit 
+    
+                                        </h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$20.0</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-3">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/jacket3.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Blue Cardigan</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$25.0</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-4">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/shoe3.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Unisex Sneakers 
+    
+                                        </h2>
+                                    <br>    
+                                    <span>Foot Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$148.6</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-5">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/watch3.png" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Zemo WristWatch 
+    
+                                        </h2>
+                                    <br>    
+                                    <span>Fashion Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$15.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-6">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wGown4.webp" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Floral Gown</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$65.03</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-7">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/sleeves2.webp" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Short Stripes</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$34.05</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-8">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wTop3.png" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Sleaky Top</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$18.02</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-9">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/coat1.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Brown Coat</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$75.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-10">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/6.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Terra Rossa</h2>
+                                    <br>    
+                                    <span>Perfume Collection</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$75.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-11">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wTop6.png" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Fit Top</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$21.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-12">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/shoe6.webp" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Jumpers Slide</h2>
+                                    <br>    
+                                    <span>Foot Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$240.85</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-13">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/jacket1.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Jean Jacket</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$140.85</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-14">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wGown3.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Puffer Gown</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$149.05</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-15">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/sleeves.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Sleeves Stripes</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$42.19</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-16">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/necklace-with-winged-heart-g9d521b37d_1920.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Necklace Heart</h2>
+                                    <br>    
+                                    <span>Fashion Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$330.65</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-17">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/watch4.webp" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Leather Watch</h2>
+                                    <br>    
+                                    <span>Fashion Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$30.01</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-18">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wSleeves4.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Vacation Sleeves</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$24.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-19">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/suit2.webp" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Collar Suit</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$556.60</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-20">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wCoats1.png" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Coat Parka</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$99.99</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-21">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/11.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Gucci Flora</h2>
+                                    <br>    
+                                    <span>Fashion Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$75.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-22">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wshoe1.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">White Heels</h2>
+                                    <br>    
+                                    <span>Foot Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$544.84</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-23">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/tshirt2.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Zebra Stripes</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$40.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-24">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/pendant-g4d7df44c0_1920.jpg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Glowing Pendant</h2>
+                                    <br>    
+                                    <span>Fashion Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$640.39</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-25">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wGown7.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Wedding Gown</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$1819</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-26">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wCoats5.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Skin Coat</h2>
+                                    <br>    
+                                    <span>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$56.14</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-27">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/shoe4.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">White Jordan</h2>
+                                    <br>    
+                                    <span>Foot Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$796.39</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-28">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/tshirt4.webp" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Black Top</h2>
+                                    <br>    
+                                    <span>Men's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$25.30</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-29">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/9.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Jeamme Lanvin</h2>
+                                    <br>    
+                                    <span>Fashion Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$40.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+                            <div class="popup-card" data-target="p-30">
+                                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                                <div class="product-img">
+                                    <img src="images/wSleeves5.jpeg" alt="" class="product-image img-fluid">
+                                </div>
+                                <div class="info">
+                                    <div class="block">
+                                        <h2 class="header-text">Creamy Sleeves</h2>
+                                    <br>    
+                                    <>Women's Wear</span>
+                                    </div>                                
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur spanipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                                    <span class="price">$89.00</span>
+                                    <a href="#" class="add-cart btn">Add To Cart</a>
+                                    <a href="#" class="add-wish">Add To Wishlist</a>
+                                    
+                    
+                                </div>
+                            </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                        </div>
+    
+                    </div>
+                </div>   
+            </div>
+     
+        </section>
+        <a href="#" class="to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+        <script src="js/shop-cart.js"></script>
+        <script src="bootstrap-5/js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/shop.js"></script>
+        <script src="js/SweetAlert.min.js"></script>
+    </div>
+</body>
+</html>

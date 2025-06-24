@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/3522288.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/features_style.css">
+    <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+    <title>Coza Store | Features</title>
+</head>
+<body>
+    <div id="loader">
+        <div class="arc medium-1"></div>
+    </div>
+    <div id="content">
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+            <div class="overlay-content">
+              <form action="">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>         
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+            
+                <a href="#" id="logo" class="navbar-brand order-lg-0 d-flex align-items-center justify-content-between">
+                    <span>COZA</span> STORE
+                </a>
+    
+                <!-- navbar icons -->
+                <div class="order-lg-2 nav-btns">
+                    <button type="button" class="btn position-relative">
+                        <a href="#"><i class="fa fa-search" onclick="openSearch()" ></i></a>
+                    </button>
+                   
+                    <button type="button" class="btn position-relative">
+                        <a href="#">
+                            <div class="night-mode">
+                                <img src="./images/icons/4489231.png" id="icon" style=" width: 20px; height: 20px;">
+                            </div>
+                        </a>
+                    </button>
+                </div>
+    
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="#navMenu" aria-expanded="false" >
+                    <span><i class="fas fa-bars"></i></span>
+                </button>
+                <div id="navMenu" class="collapse navbar-collapse order-lg-1">
+                    <ul id="navLinks" class="navbar-nav mx-auto  ">
+                        <li class="nav-item dropdown active">
+                            <a href="index.html" class="nav-link " id="dropdownMenu" role="button" data-bs-toggle="dropdown">Home</a>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a href="shop.html" class="nav-link">Shop</a>
+                        </li>
+                        <li class="nav-item position-relative">
+                            <a href="features.html" class="nav-link">Features</a>
+                            <span class="position-absolute top-0 start-100 translate-middle badge "><a href="">HOT</a></span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+              
+            </div>
+        </nav>
+        <section id="header">
+            <div class="container-fluid">
+                <h1>My Cart</h1>
+            </div>
+        </section>
+
+        <section id="my-cart"  class="my-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xlg-9 col-lg-9">
+                        <table >
+                            <thead>
+                                <tr>
+                                    <td>Remove</td>
+                                    <td>Item</td>
+                                    <td>Name</td>
+                                    <td>Price</td>
+                                    <td>Quantity</td>
+                                    <td>Total</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href=""><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                    <td>
+                                        <img src="images/men/belt.jpg" alt="">
+                                    </td>
+                                    <td>
+                                        <h5>Leather Belt</h5>
+
+                                    </td>
+                                    <td>
+                                        $65.04
+                                    </td>
+                                    <td>
+                                        <input class="w-50 " type="number" value="1">
+                                    </td>
+                                    <td>
+                                        <h5>$65.04</h5>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href=""><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                    <td >
+                                        <img src="images/wristWatches/watch5.jpeg" alt="">
+                                    </td>
+                                    <td>
+                                        <h5>Paris Watch</h5>
+
+                                    </td>
+                                    <td>
+                                        $126.00
+                                    </td>
+                                    <td>
+                                        <input class="w-50 " type="number" value="1">
+                                    </td>
+                                    <td>
+                                        <h5>$126.00</h5>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="comment py-5">
+                            <label for="textarea" class="form-label">Additional comments</label>
+                            <textarea class="form-control"  name="" id="textarea" rows="4" placeholder="Special instruction for seller..."></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xlg-3 col-lg-3 ">
+                            <div class="summary ">
+                                <div class="header-text ">
+                                    <h5>Order Summary</h5>
+                                </div>
+                                <div class="contain ">
+                                    <div class="total-name">
+                                        Sub Total:
+                                    </div>
+                                    <div class="total-price">
+                                        $191.04
+                                    </div>
+                                </div>
+                                <div class="shipping ">
+                                    <h5>Get Shipping Estimates</h5>
+                                    <select name="" id="countries" class="">
+                                        <option>United State</option>
+                                        <option>Canada</option>
+                                        <option>Mexico</option>
+                                        <option>Jamaica</option>
+                                        <option>Cuba</option>
+                                                                                                              </select>
+                                    <div id="shipping" class="shipping-btn my-3 " onclick="inner()">
+                                        Calculate Shipping
+                                    </div> 
+                                    <div class="coupon-code">
+                                        <label for="coupon">
+                                            Coupon Code:
+                                        </label>
+                                        <input type="text" maxlength="8" required id="coupon" >  
+                                        <p>Coupon code will be applied on the checkout page</p>       
+                                    </div>
+                                </div>
+                                <div class="contain2 ">
+                                    <div class="total-name">
+                                        Total:
+                                    </div>
+                                    <div class="total-price">
+                                        $191.04
+                                    </div>
+                                </div>
+                                <div class="check ">
+                                    <div class="check-box"><input type="checkbox"></div>
+                                    <div class="paragraph">
+                                        I agree with the <a href="#">Terms & conditions</a>
+                                    </div>
+                                </div>
+                                <div class="proceed-btn my-3">proceed to checkout
+                                </div>
+                                <div class="continue-btn my-3">continue shopping</div>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div class="popup-view">
+            <form action="">
+                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                <div class="inputBox">
+                    <span>card number</span>
+                    <input type="text" maxlength="16" class="card-number-input">
+                </div>
+                <div class="inputBox">
+                    <span>card holder</span>
+                    <input type="text" class="card-holder-input">
+                </div>
+                <div class="flexbox">
+                    <div class="inputBox">
+                        <span>expiraton mm</span>
+                        <select name="" id="" class="month-input">
+                            <option value="month" selected disabled>month</option>
+                            <option value="01" >01</option>
+                            <option value="02" >02</option>
+                            <option value="03" >03</option>
+                            <option value="04" >04</option>
+                            <option value="05" >05</option>
+                            <option value="06" >06</option>
+                            <option value="07" >07</option>
+                            <option value="08" >08</option>
+                            <option value="09" >09</option>
+                            <option value="10" >10</option>
+                            <option value="11" >11</option>
+                            <option value="12" >12</option>
+                        </select>
+                    </div>
+                    <div class="inputBox">
+                        <span>expiraton yy</span>
+                        <select name="" id="" class="year-input">
+                            <option value="year" selected disabled>year</option>
+                            <option value="2021" >2021</option>
+                            <option value="2022" >2022</option>
+                            <option value="2023" >2023</option>
+                            <option value="2024" >2024</option>
+                            <option value="2025" >2025</option>
+                            <option value="2026" >2026</option>
+                            <option value="2027" >2027</option>
+                            <option value="2028" >2028</option>
+                            <option value="2029" >2029</option>
+                            <option value="2030" >2030</option>
+                        </select>
+                    </div>
+                    <div class="inputBox">
+                        <span>cvv</span>
+                        <input type="text" maxlength="4" class="cvv-input">
+                    </div>
+                </div>
+                <input type="submit" value="submit" class="submit-btn">
+            </form>
+            <!-- <div class="popup-card " data-target="p-1">
+                <a href="" class="close-btn"><i class="fas fa-times"></i></a>
+                <div class="product-img">
+                    <img src="images/women/sleeves/wSleeves2.png" alt="" class=" product-image img-fluid">
+                </div>
+                <div class="info">
+                    <div class="block">
+                        <h2 class="header-text">Ash Sleeves </h2>
+                    <br>    
+                    <span>Women's Wear</span>
+                    </div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum odit pariatur ipsam dolorum inventore mollitia, ipsa dolore recusandae voluptas, repudiandae reprehenderit porro doloremque labore vitae nostrum in ipsum unde delectus.</p>
+                    <span class="price">$14.86</span>
+                    <a href="#" class="add-cart btn">Add To Cart</a>
+                    <a href="#" class="add-wish">Add To Wishlist</a>
+                    
+
+                </div>
+            </div> -->
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="#" class="to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+        <script src="bootstrap-5/js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/features.js"></script>
+        <script src="js/SweetAlert.min.js"></script>
+        <script type="text/javascript">
+           
+        </script>
+    </div>
+</body>
+</html>
